@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Profile</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 offset-md-4 mt-5">
+          <div class="card">
+            <img src="{{.Pic}}" class="card-img-top m-4" alt="User Avatar" />
+            <div class="card-body">
+              <h5 class="card-title">{{.Username}}</h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+                sed tincidunt lectus, vitae gravida elit. Aenean congue ligula
+                vel congue lobortis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <input type="text" name="username" value="{{.Username}}" disabled />
+      <input type="file" name="profpic" />
+
+      <input type="submit" value="Upload" />
+    </form>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
